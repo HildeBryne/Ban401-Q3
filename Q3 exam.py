@@ -17,28 +17,31 @@ for value in T1: #checking every value in T1
         print("- GPA:", value[3], "\n- Major:", value[4]) #printing the GPA and Major
         print("- NHHS group membership:\n", value[5]) #printing a membership
         break
-    elif a == "nmb":
-            print("Several results matched your query:\n 1.", value[0], value[1],"\n 2.", value[5], value[1])
+    elif a == "Wheeler":
+            print("Several results matched your query:\n 1.", T1[0][0], T1[0][1],"\n 2.", T1[1][0], T1[1][1])
             b = int(input("Enter a number of the search result for which you want to retrieve the info \nor enter 'all' to print info for all matching results:\n"))
             if b == 1:
-                print("yes")
-            else:
-                print("no")
+                print("Retrieving data for student", value[0], value[1])
+                print("- GPA:", value[3], "\n- Major:", value[4])  # printing the GPA and Major
+                print("- NHHS group membership:\n", value[5])  # printing a membership
                 break
-while True:
-    if a == "Wheeler":
-        print("Several results matched your query:\n 1.", value[0], value[1], "\n 2.", value[5], value[1])
-        b = int(input("Enter a number of the search result for which you want to retrieve the info \nor enter 'all' to print info for all matching results:\n"))
-        if b == 1:
-            print("yes")
-    else:
-        break
+            elif b == 2:
+                print("Retrieving data for student", value[6], value[7])
+                print("- GPA:", value[3], "\n- Major:", value[4])  # printing the GPA and Major
+                print("- NHHS group membership:\n", value[5])  # printing a membership
+                break
 
 while True:
     c = str(input("Would you like to make a new search? (y/n)\n"))
     print("---------------")
     if c == "y":
-        print("Who are you looking for?")
+        a = str(input("Who are you looking for?\n"))  # converting the input value into a string
+        for value in T1:  # checking every value in T1
+            if a in value and a != "Wheeler":  # if the input value is found in T1
+                print("Retrieving data for student", value[0], value[1])
+                print("- GPA:", value[3], "\n- Major:", value[4])  # printing the GPA and Major
+                print("- NHHS group membership:\n", value[5])  # printing a membership
+                break
     elif c == "n":
         print("Exiting the program...")
         break
