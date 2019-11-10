@@ -1,4 +1,4 @@
-numbers = [0,4,8,1,3,10,14,11,2,8,15,12,15,8,12,13,18,19,23,20,26,27,28,29,30]
+numbers = [0,4,8,1,3,10,14,11,2,8,12,8,12,13,14,18,19,23,21,22,24,25,27,20,26]
 
 new_list = []
 short_list = []
@@ -42,8 +42,23 @@ while i < len(short_list): #Whithin the length of short_list
 
 print("This is list3:",list3)
 
-longest_list = list3[-1]
+longest_list = list3[0]
 for new_list in list3:
+    new_list[0:]
     if len(longest_list) < len(new_list):
         longest_list = new_list
+
 print("longest list", longest_list)
+
+print("")
+#syntax: reversed_list = os[start:stop:step]
+reversed_list = list3[::-1] #Reversing list3
+print(reversed_list)
+
+new = reversed_list[0]
+for extra in reversed_list:
+    extra[0:]
+    if len(new) < len(extra):
+        new = extra
+
+print("longest list1", new)
